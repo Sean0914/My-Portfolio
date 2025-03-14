@@ -1,0 +1,37 @@
+.projects {
+    color: rgb(255, 255, 255);
+    padding: 10px 90px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Luckiest Guy", cursive;
+}
+.myprojects {
+    color: white;
+    text-align: center;
+    padding: 60px 10px;
+    font-size: 42px;
+    font-family: "Luckiest Guy", cursive;
+}
+.project1 img {
+    border: 1px solid white;
+    margin: 2px;
+    height: 250px;
+    border-radius: 5px;
+}
+.project1 img:hover {
+    color: #e54207;
+    box-shadow: 0 0 25px #ef6008;
+    text-shadow: 0 0 12px #e54805;
+    transition: .5s ease;
+}
+@media (max-width: 768px) {
+    .project1 img {
+        height: 200px;
+    }
+    .projects {
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}

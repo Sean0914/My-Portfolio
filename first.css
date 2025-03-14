@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+
+/* ✅ Make the Navbar Sticky */
+.nav {
+    position: fixed; /* Sticks to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: transparent;
+    backdrop-filter: blur(1px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px;
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+/* ✅ Ensure Content Doesn't Hide Under Navbar */
+.content {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+.logo img {
+    height: 54px;
+    cursor: pointer;
+}
+
+.image img {
+    height: 90px;
+    border-radius: 10000px;
+    cursor: pointer;
+}
+
+.navbar {
+    margin: 20px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 20px;
+    list-style: none; /* Ensure no bullets */
+}
+
+/* HOVER EFFECT UNDERLINE */
+.navbar ul li a {
+    color: white;
+    font-family: "Luckiest Guy", cursive;
+    position: relative; /* Add this so ::after positions relative to this */
+    display: inline-block; /* Helps with alignment */
+    padding-bottom: 5px;
+    -webkit-text-stroke: 1px #080808; /* Ensure space for the underline */
+}
+
+/* Underline effect */
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px; /* Ensure it aligns properly */
+    width: 0%;
+    height: 5px;
+    border-radius: 16px;
+    background-color: #f45d05;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+    width: 80%;
+}
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: #2d1950;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(248, 158, 12, 0.959);
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(234, 123, 5, 0.911);
+    border-radius: 12px;
+}
+.info {
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hello {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 24px; /* Fix the incorrect 'font-weight' usage */
+}
+
+.animate {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem; /* Adjust size as needed */
+    font-family: "Luckiest Guy", cursive;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.animate::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1px black;
+    border-right: 3px solid rgb(9, 9, 9);
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* 🔥 Loops forever but with a pause */
+    animation: revealText 4s steps(20, end) infinite, blinkCursor 0.7s infinite;
+}
+
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: white;
+}
+
+/* 🔄 Adds a pause */
+@keyframes revealText {
+    0% { 
+        width: 0; 
+    }
+    50% {
+         width: 100%; 
+        }  /* Typing effect */
+    80% {
+         width: 100%;
+         }  /* Pause before reset */
+    100% {
+         width: 0; 
+        }  /* Reset and restart */
+}
+
+@media (max-width: 1024px) {
+    .introduce {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .experience {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .introduce {
+        flex-direction: column;
+    }
+    .cool img {
+        height: 200px;
+    }
+    .experience {
+        padding: 0 20px;
+    }
+    .btn {
+        padding: 10px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .year {
+        font-size: 40px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .btn button {
+        padding: 8px 20px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .navbar {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar.active {
+        display: block; /* Show when toggled */
+    }
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar ul li {
+        padding: 10px;
+    }
+}
+
+
+@keyframes blinkCursor {
+    0%, 100% {
+         border-right-color: white; 
+        }
+    50% {
+         border-right-color: transparent;
+         }
+}
+
+.introduce {
+    color: white;
+    display: flex;
+    max-width: 900px;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+.cool img {
+    height: 300px;
+    border-radius: 10px;
+}
+.section {
+    color: white;
+    max-width: 500px;
+}
+.section h3 {
+    color: #f45d05;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.section h2, .section p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+}    
+
+.experience {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 0px 150px;
+}
+
+/* Make year text responsive */
+.year {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f45d05;
+    font-family: Arial, sans-serif;
+}
+
+/* Adjust text for readability on smaller screens */
+.text {
+    font-size: 16px;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Contact section responsiveness */
+.contact {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    max-width: 1100px;
+    color: white;
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .experience {
+        padding: 0px 50px;
+    }
+    .year {
+        font-size: 50px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+        padding: 0px 20px;
+    }
+    .year {
+        font-size: 40px;
+    }
+    .text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience {
+        padding: 0px 10px;
+    }
+    .year {
+        font-size: 30px;
+    }
+    .text {
+        font-size: 12px;
+    }
+}
+
+
+.btn {
+    padding: 0 120px;
+}
+.btn button {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: #f45d05;
+    padding: 10px;
+    font-family: 28px;
+    font-weight: bold;
+    font-family: "Luckiest Guy", cursive;
+}
+.btn button:hover {
+    color: #e54207;
+    box-shadow: 0 0 15px #ef6008;
+    text-shadow: 0 0 10px #e54805;
+    transition: 0.75s ease-in-out;
+}
+
+
+/* Add your styles here */
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px){
+    .introduce {
+        display: inline-block;
+    }
+}
+
+/* Popping Animation */
+.modal.show {
+    animation: popUp 0.3s ease-out;
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px; /* Adjusted for better layout */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.modal-content input {
+    width: 90%;  /* Takes almost full width */
+    min-height: 50px; /* Bigger by default */
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 12px;
+    text-align: center;
+    transition: 0.3s;
+    resize: vertical; /* Prevents manual resizing */
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #de4b06;
+    box-shadow: 0 0 5px rgba(240, 133, 3, 0.5);
+}
+
+/* Button styling */
+.modal-content button {
+    width: 50%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #f36629;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #b13606;
+}
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+    background: none;
+    border: none;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+
+.inquire {
+    font-family: Arial, sans-serif;
+    max-width: 350px;
+}
+.inquire h1 {
+    margin: 10px;
+}
+.inquire h2 {
+    margin: 10px;
+    font-weight: 10px;
+    font-size: 10px;
+    padding: 10px 20px;
+}
+.inquire h4 a {
+    text-decoration: none;
+    color: #f45d05;
+}

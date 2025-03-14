@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080808;
+    min-height: 100vh;
+}
+.skills {
+    font-family: "Luckiest Guy", cursive;  
+    padding: 30px 80px;
+}
+
+.intro {
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 42px;
+}
+.skill {
+    display: grid;
+    grid-template-columns: repeat(5, 12rem);
+    gap: 25px;
+}
+.icon {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: rgb(255, 221, 208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Ensures text stays inside */
+}
+
+.icon:hover {
+    box-shadow: 0 0 25px #ef6008;
+    text-shadow: 0 0 12px #e54805;
+    transition: .5s ease;
+}
+
+.icon img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.icon h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show text on hover */
+.icon:hover h1 {
+    opacity: 1;
+}
+
+/* Add a slight zoom effect to the image */
+.icon:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Base */
+.footer {
+    background: rgba(0, 0, 0, 0.85);  /* Semi-transparent dark */
+    backdrop-filter: blur(15px);  /* Blur effect */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Flexbox Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+}
+
+/* Brand Styling */
+.footer-logo h2 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Navigation Links */
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f0861c;  /* Cool hover effect */
+}
+
+/* Social Icons */
+.footer-socials a {
+    color: white;
+    font-size: 12px;
+    margin: 0 10px;
+    border-radius: 50px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    box-shadow: 0 0 25px #ef6008;
+    text-shadow: 0 0 12px #e54805;
+    transition: .5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .skill {
+        grid-template-columns: repeat(4, 12rem);
+        gap: 20px;
+    }
+    .icon {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .skill {
+        grid-template-columns: repeat(5, 12rem);
+    }
+    .skills {
+        padding: 30px 40px;
+    }
+    .intro {
+        font-size: 36px;
+    }
+    .icon {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skill {
+        grid-template-columns: repeat(2, 12rem);
+    }
+    .skills {
+        padding: 20px 30px;
+    }
+    .intro {
+        font-size: 32px;
+    }
+    .icon {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .skill {
+        grid-template-columns: repeat(2, 12rem);
+        justify-content: center;
+    }
+    .skills {
+        padding: 15px 20px;
+    }
+    .intro {
+        font-size: 28px;
+    }
+    .icon {
+        width: 150px;
+        height: 15s0px;
+    }
+}
+
+

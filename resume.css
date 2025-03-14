@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+/* Centering the resume section */
+.resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+}
+
+/* Style for resume container */
+.resumeInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ead1c8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.ress {
+    color: white;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: transparent;
+    padding: auto;
+}
+
+/* Style for image */
+.resumeImage {
+    width: 300px; /* Set a fixed width */
+    height: 200px; /* Show only half of the image */
+    overflow: hidden; /* Hide the other half */
+    border-radius: 10px;
+}
+
+/* Ensure image fits within the container */
+.resumeImage img {
+    width: 100%;
+    object-fit: cover; /* Crop instead of stretching */
+}
+
+/* Style for buttons */
+.resumePrev {
+    margin-top: 10px;
+}
+
+.resumePrev button {
+    padding: 10px 15px;
+    border: none;
+    background: #ff8000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.resumePrev button:hover {
+    background: #4e2b08;
+    box-shadow: 0 0 15px #ef6008;
+    text-shadow: 0 0 10px #e54805;
+    transition: 0.75s ease-in-out;
+}
