@@ -13,7 +13,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 80px;
+    padding: 15px 5%; /* Changed to relative padding for responsiveness */
+
     z-index: 1000; /* Ensures it's above other elements */
 }
 
@@ -149,6 +150,14 @@
          width: 0; 
         }  /* Reset and restart */
 }
+@keyframes blinkCursor {
+    0%, 100% {
+         border-right-color: white; 
+        }
+    50% {
+         border-right-color: transparent;
+         }
+}
 
 @media (max-width: 1024px) {
     .introduce {
@@ -235,15 +244,6 @@
 }
 
 
-@keyframes blinkCursor {
-    0%, 100% {
-         border-right-color: white; 
-        }
-    50% {
-         border-right-color: transparent;
-         }
-}
-
 .introduce {
     color: white;
     display: flex;
@@ -271,13 +271,16 @@
     font-family: Arial, sans-serif;
     margin-bottom: 15px;
 }    
-
+.this {
+    justify-content: space-between;
+}
 .experience {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
-    padding: 0px 150px;
+    padding: 0px 22%; /* Changed to relative padding for responsiveness */
+
 }
 
 /* Make year text responsive */
@@ -302,9 +305,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; /* Allow wrapping for small screens */
-    max-width: 1100px;
+    max-width: 1300px;
     color: white;
-    padding: 20px;
+    padding: 0 20px;
+    padding-top: 0;
 }
 
 /* Responsive adjustments */
@@ -353,7 +357,7 @@
 
 
 .btn {
-    padding: 0 120px;
+    padding: 0 30%;
 }
 .btn button {
     border: none;
