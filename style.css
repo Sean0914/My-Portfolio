@@ -16,7 +16,7 @@ body {
 }
 .skills {
     font-family: "Luckiest Guy", cursive;  
-    padding: 30px 80px;
+    padding: 30px 100px;
 }
 
 .intro {
@@ -25,15 +25,18 @@ body {
     padding: 10px 20px;
     font-size: 42px;
 }
+
 .skill {
     display: grid;
     grid-template-columns: repeat(5, 12rem);
-    gap: 25px;
+    gap: 50px;
+    justify-content: center; /* Ensures equal spacing */
 }
+
 .icon {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background: rgb(255, 221, 208);
     display: flex;
     justify-content: center;
@@ -42,6 +45,7 @@ body {
     border-radius: 20px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     overflow: hidden; /* Ensures text stays inside */
+    padding: 0; /* Fix: Removed extra padding */
 }
 
 .icon:hover {
@@ -80,6 +84,7 @@ body {
 .icon:hover img {
     transform: scale(1.1);
 }
+
 
 /* Footer Base */
 .footer {
