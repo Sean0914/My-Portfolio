@@ -15,7 +15,8 @@
 .project1 img {
     border: 1px solid white;
     margin: 2px;
-    height: 250px;
+    height: 300px;
+    gap: 10px;
     border-radius: 5px;
 }
 .project1 img:hover {
